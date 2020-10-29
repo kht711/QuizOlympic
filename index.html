@@ -49,6 +49,22 @@
                 }
             }
         }
+
+        function filter(){
+            for (let i = 1; i < tr.length; i++){
+                tr[i].style.display = "";
+            }
+
+            let problem = document.getElementById("problem").value;
+            let tr = table.getElementsByTagName('tr');
+            for (let i = 1; i < tr.length; i++){
+                let td = tr[i].getElementsByTagName("td");
+                if (td[0].innerHTML.indexOf(problem) == -1){
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+
         filter();
         table.style.display = "";
     </script>
