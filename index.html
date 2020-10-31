@@ -8,6 +8,7 @@
         문제 찾기<br>
         <input type = "text" id = "problem" oninput='filter()'>
         <hr>
+        <div>현재 <a id="count"></a>문제 발견</div>
         <table id = "list" border="1" style="display:none">
             <tr>
                 <th>문제</th>
@@ -16,6 +17,7 @@
         </table>
     </body>
     <script>
+        let count = 0;
         let table = document.getElementById("list");
         let tbody = table.getElementsByTagName("tbody")[0];
         table.style.tableLayout = "fixed";
@@ -48,6 +50,8 @@
                     td.innerHTML = cols[j];
                 }
             }
+            count = rows.length;
+            document.getElementById("count").innerHTML = count;
         }
 
         function filter(){
